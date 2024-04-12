@@ -1,15 +1,6 @@
 ﻿#pragma once
-#include "Form3.h"
-#using <PresentationFramework.dll>
-
-#include <string>
-#include <iostream>
-#include <Windows.h>
-#include <sqlext.h>
-#include <sqltypes.h>
-#include <sql.h>
-#include <vector>
-#include <sstream>
+#include "General.h"
+#include "database.h"
 
 namespace CoffeShop {
 
@@ -19,7 +10,6 @@ namespace CoffeShop {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	using namespace System::Windows::Controls;
 	using namespace System::Data::SqlClient;
 	/// <summary>
 	/// Summary for Form1
@@ -99,7 +89,6 @@ namespace CoffeShop {
 	private: System::Windows::Forms::Label^ label16;
 	private: System::Windows::Forms::Label^ label17;
 	private: System::Windows::Forms::PictureBox^ pictureBox8;
-	private: System::Windows::Forms::Label^ label18;
 
 
 
@@ -157,7 +146,6 @@ namespace CoffeShop {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
@@ -177,11 +165,11 @@ namespace CoffeShop {
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Black;
 			this->button1->Location = System::Drawing::Point(60, 309);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(259, 50);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"Dang nhap";
+			this->button1->Text = L"Log in";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->SizeChanged += gcnew System::EventHandler(this, &Form1::button1_SizeChanged);
 			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
@@ -193,7 +181,7 @@ namespace CoffeShop {
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox1->Location = System::Drawing::Point(60, 147);
-			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(339, 32);
@@ -209,7 +197,7 @@ namespace CoffeShop {
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox2->Location = System::Drawing::Point(60, 183);
-			this->textBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox2->Margin = System::Windows::Forms::Padding(2);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->PasswordChar = '*';
@@ -226,7 +214,7 @@ namespace CoffeShop {
 			this->checkBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->checkBox1->Location = System::Drawing::Point(60, 229);
-			this->checkBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->checkBox1->Margin = System::Windows::Forms::Padding(2);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(156, 24);
 			this->checkBox1->TabIndex = 7;
@@ -272,9 +260,9 @@ namespace CoffeShop {
 			this->label6->Location = System::Drawing::Point(58, 267);
 			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(383, 24);
+			this->label6->Size = System::Drawing::Size(286, 24);
 			this->label6->TabIndex = 10;
-			this->label6->Text = L"Ten dang nhap hoac tai khoan khong hop le";
+			this->label6->Text = L"Incorrect username or password!";
 			this->label6->Click += gcnew System::EventHandler(this, &Form1::button1_Click_1);
 			// 
 			// panel2
@@ -300,7 +288,7 @@ namespace CoffeShop {
 			this->panel2->Controls->Add(this->pictureBox2);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Right;
 			this->panel2->Location = System::Drawing::Point(734, 0);
-			this->panel2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel2->Margin = System::Windows::Forms::Padding(2);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(378, 490);
 			this->panel2->TabIndex = 11;
@@ -311,7 +299,7 @@ namespace CoffeShop {
 			// 
 			this->pictureBox8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox8.Image")));
 			this->pictureBox8->Location = System::Drawing::Point(286, 192);
-			this->pictureBox8->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pictureBox8->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox8->Name = L"pictureBox8";
 			this->pictureBox8->Size = System::Drawing::Size(89, 73);
 			this->pictureBox8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -360,7 +348,7 @@ namespace CoffeShop {
 			// 
 			this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
 			this->pictureBox7->Location = System::Drawing::Point(26, 328);
-			this->pictureBox7->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pictureBox7->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox7->Name = L"pictureBox7";
 			this->pictureBox7->Size = System::Drawing::Size(28, 26);
 			this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -439,7 +427,7 @@ namespace CoffeShop {
 			// 
 			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
 			this->pictureBox5->Location = System::Drawing::Point(26, 452);
-			this->pictureBox5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pictureBox5->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox5->Name = L"pictureBox5";
 			this->pictureBox5->Size = System::Drawing::Size(28, 26);
 			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -451,7 +439,7 @@ namespace CoffeShop {
 			// 
 			this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
 			this->pictureBox6->Location = System::Drawing::Point(26, 421);
-			this->pictureBox6->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pictureBox6->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox6->Name = L"pictureBox6";
 			this->pictureBox6->Size = System::Drawing::Size(28, 26);
 			this->pictureBox6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -463,7 +451,7 @@ namespace CoffeShop {
 			// 
 			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
 			this->pictureBox4->Location = System::Drawing::Point(26, 390);
-			this->pictureBox4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pictureBox4->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox4->Name = L"pictureBox4";
 			this->pictureBox4->Size = System::Drawing::Size(28, 26);
 			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -475,7 +463,7 @@ namespace CoffeShop {
 			// 
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
 			this->pictureBox3->Location = System::Drawing::Point(26, 359);
-			this->pictureBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pictureBox3->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox3->Name = L"pictureBox3";
 			this->pictureBox3->Size = System::Drawing::Size(28, 26);
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -514,7 +502,7 @@ namespace CoffeShop {
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
 			this->pictureBox2->Location = System::Drawing::Point(44, 10);
-			this->pictureBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pictureBox2->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(270, 180);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
@@ -540,7 +528,7 @@ namespace CoffeShop {
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(49, 10);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(76, 49);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -567,8 +555,8 @@ namespace CoffeShop {
 			this->panel1->Controls->Add(this->button2);
 			this->panel1->Controls->Add(this->label13);
 			this->panel1->Controls->Add(this->label3);
-			this->panel1->Location = System::Drawing::Point(460, 356);
-			this->panel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel1->Location = System::Drawing::Point(186, 127);
+			this->panel1->Margin = System::Windows::Forms::Padding(2);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(455, 353);
 			this->panel1->TabIndex = 15;
@@ -581,7 +569,7 @@ namespace CoffeShop {
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->button2->Location = System::Drawing::Point(280, 408);
-			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(152, 39);
 			this->button2->TabIndex = 4;
@@ -616,16 +604,6 @@ namespace CoffeShop {
 			this->label3->Text = L"Điều khoản và dịch vụ";
 			this->label3->Click += gcnew System::EventHandler(this, &Form1::label3_Click);
 			// 
-			// label18
-			// 
-			this->label18->AutoSize = true;
-			this->label18->Location = System::Drawing::Point(187, 391);
-			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(41, 13);
-			this->label18->TabIndex = 16;
-			this->label18->Text = L"label18";
-			this->label18->Click += gcnew System::EventHandler(this, &Form1::label18_Click);
-			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -633,7 +611,6 @@ namespace CoffeShop {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1112, 490);
-			this->Controls->Add(this->label18);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->pictureBox1);
@@ -648,11 +625,10 @@ namespace CoffeShop {
 			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->MaximizeBox = false;
 			this->Name = L"Form1";
 			this->Text = L"Phần mềm dành cho quản lí AnhTuCoffee";
-			this->MaximumSizeChanged += gcnew System::EventHandler(this, &Form1::Form1_MaximumSizeChanged);
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->Click += gcnew System::EventHandler(this, &Form1::button1_Click_1);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Form1::Form1_MouseDown);
@@ -675,223 +651,232 @@ namespace CoffeShop {
 
 		}
 #pragma endregion
-	private: System::Void Form1_MaximumSizeChanged(System::Object^ sender, System::EventArgs^ e) {
+		// Definitions
+		bool textBox1TextChangedFlag = false;
+		bool textBox2TextChangedFlag = false;
+		User^ user;
 
-	}
-		   // ham check username va password tu SQL sever
-		   bool loadUser(String^ username, String^ password) {
-			   SqlConnection^ connection = gcnew SqlConnection("Data Source=ATU-DEPCHAI\\SQLEXPRESS;Initial Catalog=CoffeeShop;Integrated Security=True");
-
-			   try {
-				   String^ query = "SELECT * FROM dbo.Account WHERE Username = @Username AND Password = @Password";
-				   connection->Open();
-
-				   SqlCommand^ command = gcnew SqlCommand(query, connection);
-				   command->Parameters->AddWithValue("@Username", username);
-				   command->Parameters->AddWithValue("@Password", password);
-
-				   SqlDataReader^ reader = command->ExecuteReader();
-				   bool userExists = reader->Read(); // Kiểm tra xem có dữ liệu người dùng tồn tại hay không
-				   reader->Close();
-
-				   return userExists;
-			   }
-			   catch (SqlException^ ex) {
-				   Console::WriteLine(ex->Message);
-				   return false;
-			   }
-			   finally {
-				   connection->Close();
-			   }
-		   }
-
-		   bool login(String^ username, String^ password) {
-			   return loadUser(username, password);
-		   }
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ username = textBox1->Text;
-		String^ password = textBox2->Text;
-
-		if (login(username, password)) {
-			this->Hide();
-			Form3^ form3 = gcnew Form3;
+		// ham check username va password tu SQL sever
+		void login(String^ username, String^ password) {
 			
-			form3->Show();
+
+			if (user != nullptr) {
+				this->Hide();
+				General^ form2 = gcnew General(user);
+				form2->ShowDialog();
+				user = nullptr;
+				this->Show();
+			}
+			else {
+				label6->Show();
+			}
 		}
-		else {
-			label6->Show();
+
+
+		private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+			String^ username = textBox1->Text;
+			String^ password = textBox2->Text;
+			SqlConnection^ connection = GetConnection();
+			try
+			{
+				connection->Open();
+
+				String^ query = "SELECT * FROM [dbo].[Account] WHERE Username=@Username AND Password=@Password";
+
+				SqlCommand^ command = gcnew SqlCommand(query, connection);
+				command->Parameters->AddWithValue("@Username", username);
+				command->Parameters->AddWithValue("@Password", password);
+
+				SqlDataReader^ reader = command->ExecuteReader();
+				if (reader->Read())
+				{
+					user = gcnew User();
+					user->username = username;
+					user->password = reader->GetString(1);
+					user->displayName = reader->GetString(2);
+					user->userType = reader->GetString(3);
+					if (!reader->IsDBNull(4))
+					{
+						// Retrieve the image data from the column
+						array<unsigned char>^ imageData = safe_cast<array<unsigned char>^>(reader->GetValue(4));
+
+						// Convert the image data to a System::Drawing::Image^ object
+						using namespace System::IO;
+
+						MemoryStream^ stream = gcnew MemoryStream(imageData);
+						user->image = Image::FromStream(stream);
+					}
+					else user->image = nullptr;
+					reader->Close();
+				}
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show("Exception...\n\n" + ex->Message);
+			}
+			finally
+			{
+				connection->Close();
+			}
+			
+			if (user != nullptr)
+			{
+				General^ generalCoffeeForm = gcnew General(user);
+				this->Hide();
+				generalCoffeeForm->ShowDialog();
+				user = nullptr;
+				this->Show();
+			}
+			else {
+				MessageBox::Show("user instance was not created/found...");
+			}
 		}
-	}
 		   
-	private: System::Void button1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-		button1->BackColor = System::Drawing::Color::Transparent;
-	}
-
-private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
-	button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-	button1->BackColor = System::Drawing::Color::Transparent;
-	label1->BackColor = Color::Transparent;
-	label2->BackColor = Color::Transparent;
-	label4->BackColor = Color::Transparent;
-	checkBox1->BackColor = Color::Transparent;
-	label6->BackColor = Color::Transparent;
-	pictureBox1->BackColor = Color::Transparent;
-	panel1->Hide();
-	label6->Hide();
-	checkBox1->Checked = false;
-	button1->Enabled = false;
-	label8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-	pictureBox8->BackColor = Color::Transparent;
-	
-	
-
-	
-	
-}
-
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	panel1->Hide();
-	checkBox1->Show();
-	label4->Show();
-}
-private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-	panel1->Show();
-	label4->Hide();
-	checkBox1->Hide();
-}
-	   // Create Function MoveMouse
-	   bool dragging;
-	   Point offset;
-private: System::Void Form1_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	dragging = true;
-	offset.X = e->X;
-	offset.Y = e->Y;
-}
-private: System::Void Form1_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	if (dragging) {
-		Point currentPosition = PointToScreen(Point(e->X, e->Y));
-		Location = Point(currentPosition.X - offset.X, currentPosition.Y - offset.Y);
-	}
-}
-private: System::Void Form1_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	dragging = false;
-}
-
-private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (checkBox1->Checked) {
-		button1->Enabled = true;
-	}
-	else {
-		button1->Enabled = false;
-	}
-}
-
-
-private: System::Void button1_SizeChanged(System::Object^ sender, System::EventArgs^ e) {
-	
-}
-private: System::Void textBox1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-	if (e->KeyValue == (int)Keys::Enter) {
-		e->SuppressKeyPress = true;// Ngăn chặn phím Enter tạo ra âm thanh "beep"
-		textBox2->Focus();
-	}
-}
-private: System::Void textBox2_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-	if (e->KeyValue == (int)Keys::Enter) {
-		e->SuppressKeyPress = true;// Ngăn chặn phím Enter tạo ra âm thanh "beep"
-		button1->PerformClick();
-	}
-}
-private: System::Void checkBox1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-	if (e->KeyValue == (int)Keys::Enter) {
-		e->SuppressKeyPress = true;// Ngăn chặn phím Enter tạo ra âm thanh "beep"
-		button1->PerformClick();
-	}
-}
-	   bool textBox1TextChangedFlag = false;
-	   bool textBox2TextChangedFlag = false;
-private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
-	
-
-		if (textBox1->Text == "Username") {
-			textBox1->Text = "";
+		private: System::Void button1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+			button1->BackColor = System::Drawing::Color::Transparent;
 		}
-		if (textBox2->Text == "") {
-			textBox2->Text = "Password";
+		// Form1_Load
+		private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
+			button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			button1->BackColor = System::Drawing::Color::Transparent;
+			label1->BackColor = Color::Transparent;
+			label2->BackColor = Color::Transparent;
+			label4->BackColor = Color::Transparent;
+			checkBox1->BackColor = Color::Transparent;
+			label6->BackColor = Color::Transparent;
+			pictureBox1->BackColor = Color::Transparent;
+			panel1->Hide();
+			label6->Hide();
+			checkBox1->Checked = false;
+			button1->Enabled = false;
+			label8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			pictureBox8->BackColor = Color::Transparent;
 		}
 
-		
-		
-	
-}
-
-private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	
-		
-		
-
-		if (textBox2->Text == "Password") {
-			textBox2->Text = "";
+		private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+			panel1->Hide();
+			checkBox1->Show();
+			label4->Show();
 		}
-		if (textBox1->Text == "") {
-			textBox1->Text = "Username";
+		private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+			panel1->Show();
+			label4->Hide();
+			checkBox1->Hide();
 		}
 
-		
-		
+		// Create Function MoveMouse
+		bool dragging;
+		Point offset;
+
+		private: System::Void Form1_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+			dragging = true;
+			offset.X = e->X;
+			offset.Y = e->Y;
+		}
+		private: System::Void Form1_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+			if (dragging) {
+				Point currentPosition = PointToScreen(Point(e->X, e->Y));
+				Location = Point(currentPosition.X - offset.X, currentPosition.Y - offset.Y);
+			}
+		}
+		private: System::Void Form1_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+			dragging = false;
+		}
+
+		private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+			if (checkBox1->Checked) {
+				button1->Enabled = true;
+			}
+			else {
+				button1->Enabled = false;
+			}
+		}
+
+
+		private: System::Void button1_SizeChanged(System::Object^ sender, System::EventArgs^ e) {
 	
-}
+		}
+		private: System::Void textBox1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+			if (e->KeyValue == (int)Keys::Enter) {
+				e->SuppressKeyPress = true;// Prevent the Enter key from making a "beep" sound
+				textBox2->Focus();
+			}
+		}
+		private: System::Void textBox2_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+			if (e->KeyValue == (int)Keys::Enter) {
+				e->SuppressKeyPress = true;// Prevent the Enter key from making a "beep" sound
+				button1->PerformClick();
+			}
+		}
+		private: System::Void checkBox1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+			if (e->KeyValue == (int)Keys::Enter) {
+				e->SuppressKeyPress = true;// Prevent the Enter key from making a "beep" sound
+				button1->PerformClick();
+			}
+		}
 
+	   
 
+		private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+			if (textBox1->Text == "Username") {
+				textBox1->Text = "";
+			}
+			if (textBox2->Text == "") {
+				textBox2->Text = "Password";
+			}
+		}
 
+		private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+			if (textBox2->Text == "Password") {
+				textBox2->Text = "";
+			}
+			if (textBox1->Text == "") {
+				textBox1->Text = "Username";
+			}
+		}
 
+		private: System::Void label10_Click(System::Object^ sender, System::EventArgs^ e) {
+			System::Diagnostics::Process::Start("https://www.facebook.com/atudepchai");
+		}
 
+		private: System::Void label12_Click(System::Object^ sender, System::EventArgs^ e) {
+			System::Diagnostics::Process::Start("https://t.me/+84362887148");
+		}
 
-private: System::Void label10_Click(System::Object^ sender, System::EventArgs^ e) {
-	System::Diagnostics::Process::Start("https://www.facebook.com/atudepchai");
-}
-private: System::Void label12_Click(System::Object^ sender, System::EventArgs^ e) {
-	System::Diagnostics::Process::Start("https://t.me/+84362887148");
-}
+		private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
+		}
 
-private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+		private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+			if (textBox1->Text == "") {
+				textBox1->Text = "Username";
+			}if (textBox2->Text == "") {
+				textBox2->Text = "Password";
+			}
+		}
 
-private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	if (textBox1->Text == "") {
-		textBox1->Text = "Username";
-	}if (textBox2->Text == "") {
-		textBox2->Text = "Password";
-	}
-}
-
-private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void panel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void label13_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+		}
+		private: System::Void panel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+		}
+		private: System::Void label13_Click(System::Object^ sender, System::EventArgs^ e) {
+		}
+		private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+		}
+		private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	
-}
-private: System::Void textBox2_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+		}
+		private: System::Void textBox2_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 	
-}
-private: System::Void label14_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void pictureBox8_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label9_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	System::Diagnostics::Process::Start("https://zaloapp.com/qr/p/1a0u6awmj0y3u?src=qr");
-}
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		}
+		private: System::Void label14_Click(System::Object^ sender, System::EventArgs^ e) {
+		}
+		private: System::Void pictureBox8_Click(System::Object^ sender, System::EventArgs^ e) {
+		}
+		private: System::Void label9_Click_1(System::Object^ sender, System::EventArgs^ e) {
+			System::Diagnostics::Process::Start("https://zaloapp.com/qr/p/1a0u6awmj0y3u?src=qr");
+		}
+		private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	
-}
-private: System::Void label18_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-	
-}
-};
+		}
+	};
 }
