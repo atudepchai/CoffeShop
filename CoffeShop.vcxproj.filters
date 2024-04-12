@@ -21,10 +21,19 @@
     <ClCompile Include="Form1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Form2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Form3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyUserControl.cpp">
+    <ClCompile Include="General.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="database.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyHeaders.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,10 +41,19 @@
     <ClInclude Include="Form1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Form2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Form3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MyUserControl.h">
+    <ClInclude Include="General.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="database.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyHeaders.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
