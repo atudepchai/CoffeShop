@@ -1,7 +1,7 @@
 #include "database.h"
 
 SqlConnection^ GetConnection() {
-	String^ connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=CoffeeShop;Integrated Security=True;Connect Timeout=30;";
+	String^ connectionString = "Data Source=ATU-DEPCHAI\\SQLEXPRESS;Initial Catalog=CoffeeShop;Integrated Security=True;";
 
 	SqlConnection^ connection = gcnew SqlConnection(connectionString);
 	return connection;

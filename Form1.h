@@ -555,10 +555,11 @@ namespace CoffeShop {
 			this->panel1->Controls->Add(this->button2);
 			this->panel1->Controls->Add(this->label13);
 			this->panel1->Controls->Add(this->label3);
-			this->panel1->Location = System::Drawing::Point(186, 127);
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Margin = System::Windows::Forms::Padding(2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(455, 353);
+			this->panel1->Size = System::Drawing::Size(734, 490);
 			this->panel1->TabIndex = 15;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::panel1_Paint);
 			// 
