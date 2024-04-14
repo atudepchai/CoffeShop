@@ -20,10 +20,6 @@ namespace CoffeShop {
 		General(User^ obj)
 		{
 			InitializeComponent();
-			// After loading the components
-			// Set default values for those without
-			//lblGreeting1->Text = "Hi!{name}!";
-			// picboxProfilePicture->Image = ;
 
 			// Fill the comboboxes with values from the database
 			re_populateComboBox(cbCategory, "name", "FoodCategory");
@@ -490,7 +486,7 @@ namespace CoffeShop {
 			// 
 			// rtbSelectedItemInfo
 			// 
-			this->rtbSelectedItemInfo->Cursor = System::Windows::Forms::Cursors::Default;
+			this->rtbSelectedItemInfo->Cursor = System::Windows::Forms::Cursors::No;
 			this->rtbSelectedItemInfo->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->rtbSelectedItemInfo->Location = System::Drawing::Point(117, 0);
 			this->rtbSelectedItemInfo->Name = L"rtbSelectedItemInfo";
@@ -499,6 +495,7 @@ namespace CoffeShop {
 			this->rtbSelectedItemInfo->TabIndex = 1;
 			this->rtbSelectedItemInfo->Text = L"";
 			this->rtbSelectedItemInfo->TextChanged += gcnew System::EventHandler(this, &General::rtbSelectedItemInfo_TextChanged);
+			this->rtbSelectedItemInfo->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &General::rtbSelectedItemInfo_KeyDown);
 			// 
 			// picboxSelectedItem
 			// 
@@ -702,6 +699,9 @@ private: System::Void rtbSelectedItemInfo_TextChanged(System::Object^ sender, Sy
 //nah, i think when press button "add to cart", will show bill in here
 }
 private: System::Void picboxSelectedItem_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void rtbSelectedItemInfo_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		e->SuppressKeyPress = true;// Prevent any key from making a "beep" sound
 }
 };
 }

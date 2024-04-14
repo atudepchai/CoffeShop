@@ -479,9 +479,9 @@ namespace CoffeShop {
 			this->label8->Location = System::Drawing::Point(22, 267);
 			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(346, 18);
+			this->label8->Size = System::Drawing::Size(288, 18);
 			this->label8->TabIndex = 2;
-			this->label8->Text = L"Mang đến niềm vui và năng lượng cho mỗi giọt cà phê.";
+			this->label8->Text = L"Brings joy and energy to every drop of coffee.";
 			this->label8->Click += gcnew System::EventHandler(this, &Form1::button1_Click_1);
 			// 
 			// label7
@@ -574,7 +574,7 @@ namespace CoffeShop {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(152, 39);
 			this->button2->TabIndex = 4;
-			this->button2->Text = L"Thoat";
+			this->button2->Text = L"Close";
 			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
 			// 
@@ -586,9 +586,9 @@ namespace CoffeShop {
 			this->label13->Location = System::Drawing::Point(26, 91);
 			this->label13->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(134, 28);
+			this->label13->Size = System::Drawing::Size(637, 28);
 			this->label13->TabIndex = 3;
-			this->label13->Text = L"Tú đẹp  chai";
+			this->label13->Text = L"Nothing to see here, just purchase a drink and enjoy your day.";
 			this->label13->Click += gcnew System::EventHandler(this, &Form1::label13_Click);
 			// 
 			// label3
@@ -600,9 +600,9 @@ namespace CoffeShop {
 			this->label3->Location = System::Drawing::Point(16, 22);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(340, 42);
+			this->label3->Size = System::Drawing::Size(332, 42);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"Điều khoản và dịch vụ";
+			this->label3->Text = L"Terms and Conditions";
 			this->label3->Click += gcnew System::EventHandler(this, &Form1::label3_Click);
 			// 
 			// Form1
@@ -629,7 +629,7 @@ namespace CoffeShop {
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->MaximizeBox = false;
 			this->Name = L"Form1";
-			this->Text = L"Phần mềm dành cho quản lí AnhTuCoffee";
+			this->Text = L"Ahn Tu CoffeeShop Login page";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->Click += gcnew System::EventHandler(this, &Form1::button1_Click_1);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Form1::Form1_MouseDown);
@@ -653,31 +653,13 @@ namespace CoffeShop {
 		}
 #pragma endregion
 		// Definitions
-		bool textBox1TextChangedFlag = false;
-		bool textBox2TextChangedFlag = false;
 		User^ user;
-
-		// ham check username va password tu SQL sever
-		void login(String^ username, String^ password) {
-			
-
-			if (user != nullptr) {
-				this->Hide();
-				General^ form2 = gcnew General(user);
-				form2->ShowDialog();
-				user = nullptr;
-				this->Show();
-			}
-			else {
-				label6->Show();
-			}
-		}
-
 
 		private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 			String^ username = textBox1->Text;
 			String^ password = textBox2->Text;
-			SqlConnection^ connection = GetConnection();
+
+			SqlConnection^ connection = GetConnection(); // Gets connection but connection wont be started as of yet
 			try
 			{
 				connection->Open();
@@ -691,6 +673,7 @@ namespace CoffeShop {
 				SqlDataReader^ reader = command->ExecuteReader();
 				if (reader->Read())
 				{
+					label6->Hide(); // Details of user matched successfully!
 					user = gcnew User();
 					user->username = username;
 					user->password = reader->GetString(1);
@@ -710,27 +693,29 @@ namespace CoffeShop {
 					else user->image = nullptr;
 					reader->Close();
 				}
+				else 
+				{
+					label6->Show(); // Details of user were not matching throughout or were not found
+					return;
+				}
 			}
 			catch (Exception^ ex)
 			{
 				MessageBox::Show("Exception...\n\n" + ex->Message);
+				return;
 			}
 			finally
 			{
 				connection->Close();
 			}
-			
-			if (user != nullptr)
-			{
-				General^ generalCoffeeForm = gcnew General(user);
-				this->Hide();
-				generalCoffeeForm->ShowDialog();
-				user = nullptr;
-				this->Show();
-			}
-			else {
-				MessageBox::Show("user instance was not created/found...");
-			}
+
+			// User details were found and were correct so next do this
+			General^ generalCoffeeForm = gcnew General(user);
+			this->Hide(); // Hides the current form
+			generalCoffeeForm->ShowDialog(); // Shows new form
+			// The new form 'General' was closed...
+			user = nullptr; // Clears the old user object data
+			this->Show(); // Show the login form again
 		}
 		   
 		private: System::Void button1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
