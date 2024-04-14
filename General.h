@@ -106,9 +106,9 @@ namespace CoffeShop {
 	private: System::Windows::Forms::Panel^ panelItemBrief;
 	private: System::Windows::Forms::PictureBox^ picboxSelectedItem;
 	private: System::Windows::Forms::RichTextBox^ rtbSelectedItemInfo;
-	private: Guna::UI2::WinForms::Guna2Shapes^ guna2Shapes2;
-	private: Guna::UI2::WinForms::Guna2Shapes^ guna2Shapes1;
-	private: System::Windows::Forms::Label^ label1;
+
+
+
 
 
 
@@ -129,8 +129,6 @@ namespace CoffeShop {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			Guna::UI2::WinForms::Suite::CustomizableEdges^ customizableEdges2 = (gcnew Guna::UI2::WinForms::Suite::CustomizableEdges());
-			Guna::UI2::WinForms::Suite::CustomizableEdges^ customizableEdges1 = (gcnew Guna::UI2::WinForms::Suite::CustomizableEdges());
 			this->panelNavigationBar = (gcnew System::Windows::Forms::Panel());
 			this->lblGreeting1 = (gcnew System::Windows::Forms::Label());
 			this->picboxProfilePicture = (gcnew System::Windows::Forms::PictureBox());
@@ -164,9 +162,6 @@ namespace CoffeShop {
 			this->lblCategory = (gcnew System::Windows::Forms::Label());
 			this->cbItem = (gcnew System::Windows::Forms::ComboBox());
 			this->cbCategory = (gcnew System::Windows::Forms::ComboBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->guna2Shapes1 = (gcnew Guna::UI2::WinForms::Guna2Shapes());
-			this->guna2Shapes2 = (gcnew Guna::UI2::WinForms::Guna2Shapes());
 			this->panelNavigationBar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->picboxProfilePicture))->BeginInit();
 			this->panelTableButtons1->SuspendLayout();
@@ -443,9 +438,6 @@ namespace CoffeShop {
 			// 
 			// panelStore
 			// 
-			this->panelStore->Controls->Add(this->guna2Shapes2);
-			this->panelStore->Controls->Add(this->guna2Shapes1);
-			this->panelStore->Controls->Add(this->label1);
 			this->panelStore->Controls->Add(this->dgvListOfItems1);
 			this->panelStore->Controls->Add(this->panelSelectedItemOptions);
 			this->panelStore->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -585,39 +577,6 @@ namespace CoffeShop {
 			this->cbCategory->TabIndex = 0;
 			this->cbCategory->SelectedIndexChanged += gcnew System::EventHandler(this, &General::cbCategory_SelectedIndexChanged);
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(409, 161);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(311, 13);
-			this->label1->TabIndex = 2;
-			this->label1->Text = L"nah, i think when press button \"add to cart\", will show bill in here";
-			// 
-			// guna2Shapes1
-			// 
-			this->guna2Shapes1->Location = System::Drawing::Point(493, 78);
-			this->guna2Shapes1->Name = L"guna2Shapes1";
-			this->guna2Shapes1->PolygonSkip = 1;
-			this->guna2Shapes1->Rotate = 0;
-			this->guna2Shapes1->RoundedEdges = customizableEdges2;
-			this->guna2Shapes1->Size = System::Drawing::Size(10, 80);
-			this->guna2Shapes1->TabIndex = 3;
-			this->guna2Shapes1->Text = L"guna2Shapes1";
-			this->guna2Shapes1->Zoom = 80;
-			// 
-			// guna2Shapes2
-			// 
-			this->guna2Shapes2->Location = System::Drawing::Point(677, 78);
-			this->guna2Shapes2->Name = L"guna2Shapes2";
-			this->guna2Shapes2->PolygonSkip = 1;
-			this->guna2Shapes2->Rotate = 0;
-			this->guna2Shapes2->RoundedEdges = customizableEdges1;
-			this->guna2Shapes2->Size = System::Drawing::Size(10, 80);
-			this->guna2Shapes2->TabIndex = 4;
-			this->guna2Shapes2->Text = L"guna2Shapes2";
-			this->guna2Shapes2->Zoom = 80;
-			// 
 			// General
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -635,7 +594,6 @@ namespace CoffeShop {
 			this->panelTableButtons1->ResumeLayout(false);
 			this->tableLayout_Buttons->ResumeLayout(false);
 			this->panelStore->ResumeLayout(false);
-			this->panelStore->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvListOfItems1))->EndInit();
 			this->panelSelectedItemOptions->ResumeLayout(false);
 			this->panelSelectedItemOptions->PerformLayout();
@@ -741,7 +699,7 @@ namespace CoffeShop {
 	private: System::Void numQuantity_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void rtbSelectedItemInfo_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-
+//nah, i think when press button "add to cart", will show bill in here
 }
 private: System::Void picboxSelectedItem_Click(System::Object^ sender, System::EventArgs^ e) {
 }

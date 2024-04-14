@@ -133,8 +133,8 @@ private: System::Windows::Forms::TextBox^ textBox6;
 private: System::Windows::Forms::Button^ button3;
 private: System::Windows::Forms::TextBox^ textBox11;
 private: System::Windows::Forms::Button^ button4;
-private: System::Windows::Forms::PictureBox^ pictureBox1;
-private: System::Windows::Forms::Label^ label7;
+
+
 
 
 	protected:
@@ -321,7 +321,6 @@ private: System::Windows::Forms::Label^ label7;
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Form3::typeid));
 			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
 			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -392,8 +391,6 @@ private: System::Windows::Forms::Label^ label7;
 			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->tabPage5->SuspendLayout();
 			this->panel6->SuspendLayout();
 			this->panel24->SuspendLayout();
@@ -424,7 +421,6 @@ private: System::Windows::Forms::Label^ label7;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->panel3->SuspendLayout();
 			this->tabControl1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabPage5
@@ -1125,8 +1121,6 @@ private: System::Windows::Forms::Label^ label7;
 			// 
 			// tabPage1
 			// 
-			this->tabPage1->Controls->Add(this->label7);
-			this->tabPage1->Controls->Add(this->pictureBox1);
 			this->tabPage1->Controls->Add(this->button4);
 			this->tabPage1->Controls->Add(this->dataGridView1);
 			this->tabPage1->Controls->Add(this->panel3);
@@ -1219,27 +1213,6 @@ private: System::Windows::Forms::Label^ label7;
 			this->tabControl1->TabIndex = 0;
 			this->tabControl1->SelectedIndexChanged += gcnew System::EventHandler(this, &Form3::tabControl1_SelectedIndexChanged);
 			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(319, 120);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(660, 145);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox1->TabIndex = 3;
-			this->pictureBox1->TabStop = false;
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(526, 120);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(94, 25);
-			this->label7->TabIndex = 4;
-			this->label7->Text = L"Like that";
-			// 
 			// Form3
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1292,11 +1265,9 @@ private: System::Windows::Forms::Label^ label7;
 			this->panel4->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->tabPage1->ResumeLayout(false);
-			this->tabPage1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->panel3->ResumeLayout(false);
 			this->tabControl1->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
