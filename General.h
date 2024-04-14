@@ -172,6 +172,7 @@ namespace CoffeShop {
 			// 
 			// panelNavigationBar
 			// 
+			this->panelNavigationBar->BackColor = System::Drawing::SystemColors::Info;
 			this->panelNavigationBar->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panelNavigationBar->Controls->Add(this->lblGreeting1);
 			this->panelNavigationBar->Controls->Add(this->picboxProfilePicture);
@@ -179,24 +180,26 @@ namespace CoffeShop {
 			this->panelNavigationBar->Location = System::Drawing::Point(0, 0);
 			this->panelNavigationBar->Margin = System::Windows::Forms::Padding(0);
 			this->panelNavigationBar->Name = L"panelNavigationBar";
-			this->panelNavigationBar->Size = System::Drawing::Size(997, 89);
+			this->panelNavigationBar->Size = System::Drawing::Size(1329, 109);
 			this->panelNavigationBar->TabIndex = 0;
 			// 
 			// lblGreeting1
 			// 
 			this->lblGreeting1->AutoSize = true;
-			this->lblGreeting1->Location = System::Drawing::Point(841, 20);
+			this->lblGreeting1->Location = System::Drawing::Point(1121, 25);
+			this->lblGreeting1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblGreeting1->Name = L"lblGreeting1";
-			this->lblGreeting1->Size = System::Drawing::Size(60, 13);
+			this->lblGreeting1->Size = System::Drawing::Size(73, 16);
 			this->lblGreeting1->TabIndex = 1;
 			this->lblGreeting1->Text = L"Hi! {name}!";
 			// 
 			// picboxProfilePicture
 			// 
 			this->picboxProfilePicture->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->picboxProfilePicture->Location = System::Drawing::Point(920, 11);
+			this->picboxProfilePicture->Location = System::Drawing::Point(1227, 14);
+			this->picboxProfilePicture->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->picboxProfilePicture->Name = L"picboxProfilePicture";
-			this->picboxProfilePicture->Size = System::Drawing::Size(64, 64);
+			this->picboxProfilePicture->Size = System::Drawing::Size(85, 78);
 			this->picboxProfilePicture->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->picboxProfilePicture->TabIndex = 0;
 			this->picboxProfilePicture->TabStop = false;
@@ -206,9 +209,10 @@ namespace CoffeShop {
 			// 
 			this->panelTableButtons1->Controls->Add(this->tableLayout_Buttons);
 			this->panelTableButtons1->Dock = System::Windows::Forms::DockStyle::Left;
-			this->panelTableButtons1->Location = System::Drawing::Point(0, 89);
+			this->panelTableButtons1->Location = System::Drawing::Point(0, 109);
+			this->panelTableButtons1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panelTableButtons1->Name = L"panelTableButtons1";
-			this->panelTableButtons1->Size = System::Drawing::Size(255, 420);
+			this->panelTableButtons1->Size = System::Drawing::Size(340, 517);
 			this->panelTableButtons1->TabIndex = 1;
 			// 
 			// tableLayout_Buttons
@@ -237,6 +241,7 @@ namespace CoffeShop {
 			this->tableLayout_Buttons->Controls->Add(this->btnTable1, 0, 0);
 			this->tableLayout_Buttons->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->tableLayout_Buttons->Location = System::Drawing::Point(0, 0);
+			this->tableLayout_Buttons->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tableLayout_Buttons->Name = L"tableLayout_Buttons";
 			this->tableLayout_Buttons->RowCount = 5;
 			this->tableLayout_Buttons->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent,
@@ -249,7 +254,7 @@ namespace CoffeShop {
 				20)));
 			this->tableLayout_Buttons->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent,
 				20)));
-			this->tableLayout_Buttons->Size = System::Drawing::Size(255, 420);
+			this->tableLayout_Buttons->Size = System::Drawing::Size(340, 517);
 			this->tableLayout_Buttons->TabIndex = 0;
 			// 
 			// btnTable15
@@ -257,9 +262,10 @@ namespace CoffeShop {
 			this->btnTable15->BackColor = System::Drawing::Color::PeachPuff;
 			this->btnTable15->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnTable15->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTable15->Location = System::Drawing::Point(172, 339);
+			this->btnTable15->Location = System::Drawing::Point(230, 416);
+			this->btnTable15->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnTable15->Name = L"btnTable15";
-			this->btnTable15->Size = System::Drawing::Size(80, 78);
+			this->btnTable15->Size = System::Drawing::Size(106, 97);
 			this->btnTable15->TabIndex = 14;
 			this->btnTable15->Text = L"Table 15";
 			this->btnTable15->UseVisualStyleBackColor = false;
@@ -269,9 +275,10 @@ namespace CoffeShop {
 			this->btnTable14->BackColor = System::Drawing::Color::PeachPuff;
 			this->btnTable14->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnTable14->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTable14->Location = System::Drawing::Point(87, 339);
+			this->btnTable14->Location = System::Drawing::Point(117, 416);
+			this->btnTable14->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnTable14->Name = L"btnTable14";
-			this->btnTable14->Size = System::Drawing::Size(79, 78);
+			this->btnTable14->Size = System::Drawing::Size(105, 97);
 			this->btnTable14->TabIndex = 13;
 			this->btnTable14->Text = L"Table 14";
 			this->btnTable14->UseVisualStyleBackColor = false;
@@ -281,9 +288,10 @@ namespace CoffeShop {
 			this->btnTable13->BackColor = System::Drawing::Color::PeachPuff;
 			this->btnTable13->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnTable13->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTable13->Location = System::Drawing::Point(3, 339);
+			this->btnTable13->Location = System::Drawing::Point(4, 416);
+			this->btnTable13->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnTable13->Name = L"btnTable13";
-			this->btnTable13->Size = System::Drawing::Size(78, 78);
+			this->btnTable13->Size = System::Drawing::Size(105, 97);
 			this->btnTable13->TabIndex = 12;
 			this->btnTable13->Text = L"Table 13";
 			this->btnTable13->UseVisualStyleBackColor = false;
@@ -293,9 +301,10 @@ namespace CoffeShop {
 			this->btnTable12->BackColor = System::Drawing::Color::PeachPuff;
 			this->btnTable12->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnTable12->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTable12->Location = System::Drawing::Point(172, 255);
+			this->btnTable12->Location = System::Drawing::Point(230, 313);
+			this->btnTable12->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnTable12->Name = L"btnTable12";
-			this->btnTable12->Size = System::Drawing::Size(80, 78);
+			this->btnTable12->Size = System::Drawing::Size(106, 95);
 			this->btnTable12->TabIndex = 11;
 			this->btnTable12->Text = L"Table 12";
 			this->btnTable12->UseVisualStyleBackColor = false;
@@ -305,9 +314,10 @@ namespace CoffeShop {
 			this->btnTable11->BackColor = System::Drawing::Color::PeachPuff;
 			this->btnTable11->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnTable11->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTable11->Location = System::Drawing::Point(87, 255);
+			this->btnTable11->Location = System::Drawing::Point(117, 313);
+			this->btnTable11->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnTable11->Name = L"btnTable11";
-			this->btnTable11->Size = System::Drawing::Size(79, 78);
+			this->btnTable11->Size = System::Drawing::Size(105, 95);
 			this->btnTable11->TabIndex = 10;
 			this->btnTable11->Text = L"Table 11";
 			this->btnTable11->UseVisualStyleBackColor = false;
@@ -317,9 +327,10 @@ namespace CoffeShop {
 			this->btnTable10->BackColor = System::Drawing::Color::PeachPuff;
 			this->btnTable10->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnTable10->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTable10->Location = System::Drawing::Point(3, 255);
+			this->btnTable10->Location = System::Drawing::Point(4, 313);
+			this->btnTable10->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnTable10->Name = L"btnTable10";
-			this->btnTable10->Size = System::Drawing::Size(78, 78);
+			this->btnTable10->Size = System::Drawing::Size(105, 95);
 			this->btnTable10->TabIndex = 9;
 			this->btnTable10->Text = L"Table 10";
 			this->btnTable10->UseVisualStyleBackColor = false;
@@ -329,9 +340,10 @@ namespace CoffeShop {
 			this->btnTable9->BackColor = System::Drawing::Color::PeachPuff;
 			this->btnTable9->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnTable9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTable9->Location = System::Drawing::Point(172, 171);
+			this->btnTable9->Location = System::Drawing::Point(230, 210);
+			this->btnTable9->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnTable9->Name = L"btnTable9";
-			this->btnTable9->Size = System::Drawing::Size(80, 78);
+			this->btnTable9->Size = System::Drawing::Size(106, 95);
 			this->btnTable9->TabIndex = 8;
 			this->btnTable9->Text = L"Table 9";
 			this->btnTable9->UseVisualStyleBackColor = false;
@@ -341,9 +353,10 @@ namespace CoffeShop {
 			this->btnTable8->BackColor = System::Drawing::Color::PeachPuff;
 			this->btnTable8->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnTable8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTable8->Location = System::Drawing::Point(87, 171);
+			this->btnTable8->Location = System::Drawing::Point(117, 210);
+			this->btnTable8->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnTable8->Name = L"btnTable8";
-			this->btnTable8->Size = System::Drawing::Size(79, 78);
+			this->btnTable8->Size = System::Drawing::Size(105, 95);
 			this->btnTable8->TabIndex = 7;
 			this->btnTable8->Text = L"Table 8";
 			this->btnTable8->UseVisualStyleBackColor = false;
@@ -353,9 +366,10 @@ namespace CoffeShop {
 			this->btnTable7->BackColor = System::Drawing::Color::PeachPuff;
 			this->btnTable7->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnTable7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTable7->Location = System::Drawing::Point(3, 171);
+			this->btnTable7->Location = System::Drawing::Point(4, 210);
+			this->btnTable7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnTable7->Name = L"btnTable7";
-			this->btnTable7->Size = System::Drawing::Size(78, 78);
+			this->btnTable7->Size = System::Drawing::Size(105, 95);
 			this->btnTable7->TabIndex = 6;
 			this->btnTable7->Text = L"Table 7";
 			this->btnTable7->UseVisualStyleBackColor = false;
@@ -365,9 +379,10 @@ namespace CoffeShop {
 			this->btnTable6->BackColor = System::Drawing::Color::PeachPuff;
 			this->btnTable6->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnTable6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTable6->Location = System::Drawing::Point(172, 87);
+			this->btnTable6->Location = System::Drawing::Point(230, 107);
+			this->btnTable6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnTable6->Name = L"btnTable6";
-			this->btnTable6->Size = System::Drawing::Size(80, 78);
+			this->btnTable6->Size = System::Drawing::Size(106, 95);
 			this->btnTable6->TabIndex = 5;
 			this->btnTable6->Text = L"Table 6";
 			this->btnTable6->UseVisualStyleBackColor = false;
@@ -377,9 +392,10 @@ namespace CoffeShop {
 			this->btnTable5->BackColor = System::Drawing::Color::PeachPuff;
 			this->btnTable5->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnTable5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTable5->Location = System::Drawing::Point(87, 87);
+			this->btnTable5->Location = System::Drawing::Point(117, 107);
+			this->btnTable5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnTable5->Name = L"btnTable5";
-			this->btnTable5->Size = System::Drawing::Size(79, 78);
+			this->btnTable5->Size = System::Drawing::Size(105, 95);
 			this->btnTable5->TabIndex = 4;
 			this->btnTable5->Text = L"Table 5";
 			this->btnTable5->UseVisualStyleBackColor = false;
@@ -389,9 +405,10 @@ namespace CoffeShop {
 			this->btnTable4->BackColor = System::Drawing::Color::PeachPuff;
 			this->btnTable4->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnTable4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTable4->Location = System::Drawing::Point(3, 87);
+			this->btnTable4->Location = System::Drawing::Point(4, 107);
+			this->btnTable4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnTable4->Name = L"btnTable4";
-			this->btnTable4->Size = System::Drawing::Size(78, 78);
+			this->btnTable4->Size = System::Drawing::Size(105, 95);
 			this->btnTable4->TabIndex = 3;
 			this->btnTable4->Text = L"Table 4";
 			this->btnTable4->UseVisualStyleBackColor = false;
@@ -401,9 +418,10 @@ namespace CoffeShop {
 			this->btnTable3->BackColor = System::Drawing::Color::PeachPuff;
 			this->btnTable3->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnTable3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTable3->Location = System::Drawing::Point(172, 3);
+			this->btnTable3->Location = System::Drawing::Point(230, 4);
+			this->btnTable3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnTable3->Name = L"btnTable3";
-			this->btnTable3->Size = System::Drawing::Size(80, 78);
+			this->btnTable3->Size = System::Drawing::Size(106, 95);
 			this->btnTable3->TabIndex = 2;
 			this->btnTable3->Text = L"Table 3";
 			this->btnTable3->UseVisualStyleBackColor = false;
@@ -413,9 +431,10 @@ namespace CoffeShop {
 			this->btnTable2->BackColor = System::Drawing::Color::PeachPuff;
 			this->btnTable2->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnTable2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTable2->Location = System::Drawing::Point(87, 3);
+			this->btnTable2->Location = System::Drawing::Point(117, 4);
+			this->btnTable2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnTable2->Name = L"btnTable2";
-			this->btnTable2->Size = System::Drawing::Size(79, 78);
+			this->btnTable2->Size = System::Drawing::Size(105, 95);
 			this->btnTable2->TabIndex = 1;
 			this->btnTable2->Text = L"Table 2";
 			this->btnTable2->UseVisualStyleBackColor = false;
@@ -425,9 +444,10 @@ namespace CoffeShop {
 			this->btnTable1->BackColor = System::Drawing::Color::PeachPuff;
 			this->btnTable1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnTable1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnTable1->Location = System::Drawing::Point(3, 3);
+			this->btnTable1->Location = System::Drawing::Point(4, 4);
+			this->btnTable1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnTable1->Name = L"btnTable1";
-			this->btnTable1->Size = System::Drawing::Size(78, 78);
+			this->btnTable1->Size = System::Drawing::Size(105, 95);
 			this->btnTable1->TabIndex = 0;
 			this->btnTable1->Text = L"Table 1";
 			this->btnTable1->UseVisualStyleBackColor = false;
@@ -437,9 +457,10 @@ namespace CoffeShop {
 			this->panelStore->Controls->Add(this->dgvListOfItems1);
 			this->panelStore->Controls->Add(this->panelSelectedItemOptions);
 			this->panelStore->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->panelStore->Location = System::Drawing::Point(255, 89);
+			this->panelStore->Location = System::Drawing::Point(340, 109);
+			this->panelStore->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panelStore->Name = L"panelStore";
-			this->panelStore->Size = System::Drawing::Size(742, 420);
+			this->panelStore->Size = System::Drawing::Size(989, 517);
 			this->panelStore->TabIndex = 2;
 			// 
 			// dgvListOfItems1
@@ -447,13 +468,16 @@ namespace CoffeShop {
 			this->dgvListOfItems1->AllowUserToAddRows = false;
 			this->dgvListOfItems1->AllowUserToDeleteRows = false;
 			this->dgvListOfItems1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dgvListOfItems1->ColumnHeadersHeight = 29;
 			this->dgvListOfItems1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->dgvListOfItems1->Location = System::Drawing::Point(0, 100);
+			this->dgvListOfItems1->Location = System::Drawing::Point(0, 123);
+			this->dgvListOfItems1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->dgvListOfItems1->MultiSelect = false;
 			this->dgvListOfItems1->Name = L"dgvListOfItems1";
 			this->dgvListOfItems1->ReadOnly = true;
+			this->dgvListOfItems1->RowHeadersWidth = 51;
 			this->dgvListOfItems1->ShowEditingIcon = false;
-			this->dgvListOfItems1->Size = System::Drawing::Size(742, 320);
+			this->dgvListOfItems1->Size = System::Drawing::Size(989, 394);
 			this->dgvListOfItems1->TabIndex = 1;
 			this->dgvListOfItems1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &General::dgvListOfItems1_CellContentClick);
 			this->dgvListOfItems1->CellDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &General::dgvListOfItems1_CellDoubleClick);
@@ -470,8 +494,9 @@ namespace CoffeShop {
 			this->panelSelectedItemOptions->Controls->Add(this->cbCategory);
 			this->panelSelectedItemOptions->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panelSelectedItemOptions->Location = System::Drawing::Point(0, 0);
+			this->panelSelectedItemOptions->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panelSelectedItemOptions->Name = L"panelSelectedItemOptions";
-			this->panelSelectedItemOptions->Size = System::Drawing::Size(742, 100);
+			this->panelSelectedItemOptions->Size = System::Drawing::Size(989, 123);
 			this->panelSelectedItemOptions->TabIndex = 0;
 			// 
 			// panelItemBrief
@@ -479,19 +504,21 @@ namespace CoffeShop {
 			this->panelItemBrief->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panelItemBrief->Controls->Add(this->rtbSelectedItemInfo);
 			this->panelItemBrief->Controls->Add(this->picboxSelectedItem);
-			this->panelItemBrief->Location = System::Drawing::Point(283, 3);
+			this->panelItemBrief->Location = System::Drawing::Point(377, 4);
+			this->panelItemBrief->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panelItemBrief->Name = L"panelItemBrief";
-			this->panelItemBrief->Size = System::Drawing::Size(320, 93);
+			this->panelItemBrief->Size = System::Drawing::Size(426, 114);
 			this->panelItemBrief->TabIndex = 7;
 			// 
 			// rtbSelectedItemInfo
 			// 
 			this->rtbSelectedItemInfo->Cursor = System::Windows::Forms::Cursors::No;
 			this->rtbSelectedItemInfo->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->rtbSelectedItemInfo->Location = System::Drawing::Point(117, 0);
+			this->rtbSelectedItemInfo->Location = System::Drawing::Point(155, 0);
+			this->rtbSelectedItemInfo->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->rtbSelectedItemInfo->Name = L"rtbSelectedItemInfo";
 			this->rtbSelectedItemInfo->ReadOnly = true;
-			this->rtbSelectedItemInfo->Size = System::Drawing::Size(201, 91);
+			this->rtbSelectedItemInfo->Size = System::Drawing::Size(269, 112);
 			this->rtbSelectedItemInfo->TabIndex = 1;
 			this->rtbSelectedItemInfo->Text = L"";
 			this->rtbSelectedItemInfo->TextChanged += gcnew System::EventHandler(this, &General::rtbSelectedItemInfo_TextChanged);
@@ -502,8 +529,9 @@ namespace CoffeShop {
 			this->picboxSelectedItem->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->picboxSelectedItem->Dock = System::Windows::Forms::DockStyle::Left;
 			this->picboxSelectedItem->Location = System::Drawing::Point(0, 0);
+			this->picboxSelectedItem->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->picboxSelectedItem->Name = L"picboxSelectedItem";
-			this->picboxSelectedItem->Size = System::Drawing::Size(117, 91);
+			this->picboxSelectedItem->Size = System::Drawing::Size(155, 112);
 			this->picboxSelectedItem->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->picboxSelectedItem->TabIndex = 0;
 			this->picboxSelectedItem->TabStop = false;
@@ -511,9 +539,10 @@ namespace CoffeShop {
 			// 
 			// btnAddToCart
 			// 
-			this->btnAddToCart->Location = System::Drawing::Point(646, 42);
+			this->btnAddToCart->Location = System::Drawing::Point(861, 52);
+			this->btnAddToCart->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnAddToCart->Name = L"btnAddToCart";
-			this->btnAddToCart->Size = System::Drawing::Size(84, 35);
+			this->btnAddToCart->Size = System::Drawing::Size(112, 43);
 			this->btnAddToCart->TabIndex = 6;
 			this->btnAddToCart->Text = L"Add to cart";
 			this->btnAddToCart->UseVisualStyleBackColor = true;
@@ -521,17 +550,19 @@ namespace CoffeShop {
 			// lblQuantity
 			// 
 			this->lblQuantity->AutoSize = true;
-			this->lblQuantity->Location = System::Drawing::Point(609, 3);
+			this->lblQuantity->Location = System::Drawing::Point(812, 4);
+			this->lblQuantity->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblQuantity->Name = L"lblQuantity";
-			this->lblQuantity->Size = System::Drawing::Size(49, 13);
+			this->lblQuantity->Size = System::Drawing::Size(58, 16);
 			this->lblQuantity->TabIndex = 5;
 			this->lblQuantity->Text = L"Quantity:";
 			// 
 			// numQuantity
 			// 
-			this->numQuantity->Location = System::Drawing::Point(612, 19);
+			this->numQuantity->Location = System::Drawing::Point(816, 23);
+			this->numQuantity->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->numQuantity->Name = L"numQuantity";
-			this->numQuantity->Size = System::Drawing::Size(120, 20);
+			this->numQuantity->Size = System::Drawing::Size(160, 22);
 			this->numQuantity->TabIndex = 4;
 			this->numQuantity->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numQuantity->ValueChanged += gcnew System::EventHandler(this, &General::numQuantity_ValueChanged);
@@ -539,18 +570,20 @@ namespace CoffeShop {
 			// lblSelectedItem
 			// 
 			this->lblSelectedItem->AutoSize = true;
-			this->lblSelectedItem->Location = System::Drawing::Point(16, 53);
+			this->lblSelectedItem->Location = System::Drawing::Point(21, 65);
+			this->lblSelectedItem->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblSelectedItem->Name = L"lblSelectedItem";
-			this->lblSelectedItem->Size = System::Drawing::Size(30, 13);
+			this->lblSelectedItem->Size = System::Drawing::Size(35, 16);
 			this->lblSelectedItem->TabIndex = 3;
 			this->lblSelectedItem->Text = L"Item:";
 			// 
 			// lblCategory
 			// 
 			this->lblCategory->AutoSize = true;
-			this->lblCategory->Location = System::Drawing::Point(16, 13);
+			this->lblCategory->Location = System::Drawing::Point(21, 16);
+			this->lblCategory->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblCategory->Name = L"lblCategory";
-			this->lblCategory->Size = System::Drawing::Size(52, 13);
+			this->lblCategory->Size = System::Drawing::Size(65, 16);
 			this->lblCategory->TabIndex = 2;
 			this->lblCategory->Text = L"Category:";
 			// 
@@ -558,9 +591,10 @@ namespace CoffeShop {
 			// 
 			this->cbItem->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cbItem->FormattingEnabled = true;
-			this->cbItem->Location = System::Drawing::Point(19, 69);
+			this->cbItem->Location = System::Drawing::Point(25, 85);
+			this->cbItem->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->cbItem->Name = L"cbItem";
-			this->cbItem->Size = System::Drawing::Size(258, 21);
+			this->cbItem->Size = System::Drawing::Size(343, 24);
 			this->cbItem->TabIndex = 1;
 			this->cbItem->SelectedIndexChanged += gcnew System::EventHandler(this, &General::cbItem_SelectedIndexChanged);
 			// 
@@ -568,20 +602,22 @@ namespace CoffeShop {
 			// 
 			this->cbCategory->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cbCategory->FormattingEnabled = true;
-			this->cbCategory->Location = System::Drawing::Point(19, 29);
+			this->cbCategory->Location = System::Drawing::Point(25, 36);
+			this->cbCategory->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->cbCategory->Name = L"cbCategory";
-			this->cbCategory->Size = System::Drawing::Size(258, 21);
+			this->cbCategory->Size = System::Drawing::Size(343, 24);
 			this->cbCategory->TabIndex = 0;
 			this->cbCategory->SelectedIndexChanged += gcnew System::EventHandler(this, &General::cbCategory_SelectedIndexChanged);
 			// 
 			// General
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(997, 509);
+			this->ClientSize = System::Drawing::Size(1329, 626);
 			this->Controls->Add(this->panelStore);
 			this->Controls->Add(this->panelTableButtons1);
 			this->Controls->Add(this->panelNavigationBar);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"General";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
 			this->Text = L"Ahn\'s Coffee Shop";

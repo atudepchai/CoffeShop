@@ -3,7 +3,7 @@
 SqlConnection^ GetConnection() {
 	String^ connectionString = "Data Source=ATU-DEPCHAI\\SQLEXPRESS;Initial Catalog=CoffeeShop;Integrated Security=True;";
 	// comment below. {DO NOT REMOVE!}
-	connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=CoffeeShop;Integrated Security=True;Connect Timeout=30;";
+	connectionString = "Data Source=ATU-DEPCHAI\\SQLEXPRESS;Initial Catalog=CoffeeShop;Integrated Security=True;Connect Timeout=30;";
 
 	SqlConnection^ connection = gcnew SqlConnection(connectionString);
 	return connection;
