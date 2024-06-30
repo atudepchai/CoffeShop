@@ -664,11 +664,11 @@ namespace CoffeShop {
 			{
 				connection->Open();
 
-				String^ query = "SELECT * FROM [dbo].[Account] WHERE Username=@Username AND Password=@Password";
+				String^ query = "SELECT * FROM [dbo].[Account] WHERE Username=@User AND Password=@Pass";
 
 				SqlCommand^ command = gcnew SqlCommand(query, connection);
-				command->Parameters->AddWithValue("@Username", username);
-				command->Parameters->AddWithValue("@Password", password);
+				command->Parameters->AddWithValue("@User", username);
+				command->Parameters->AddWithValue("@Pass", password);
 
 				SqlDataReader^ reader = command->ExecuteReader();
 				if (reader->Read())
@@ -676,13 +676,14 @@ namespace CoffeShop {
 					label6->Hide(); // Details of user matched successfully!
 					user = gcnew User();
 					user->username = username;
-					user->password = reader->GetString(1);
-					user->displayName = reader->GetString(2);
-					user->userType = reader->GetString(3);
-					if (!reader->IsDBNull(4))
+					user->id = reader->GetInt32(0);
+					user->password = reader->GetString(2);
+					user->displayName = reader->GetString(3);
+					user->userType = reader->GetString(4);
+					if (!reader->IsDBNull(5))
 					{
 						// Retrieve the image data from the column
-						array<unsigned char>^ imageData = safe_cast<array<unsigned char>^>(reader->GetValue(4));
+						array<unsigned char>^ imageData = safe_cast<array<unsigned char>^>(reader->GetValue(5));
 
 						// Convert the image data to a System::Drawing::Image^ object
 						using namespace System::IO;

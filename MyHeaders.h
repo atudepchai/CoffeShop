@@ -12,7 +12,7 @@ public:
 	void InitializeVariables(String^ username);
 	bool User::operator==(User^ other);
 	User();
-
+	int id;
 	String^ username;
 	String^ displayName;
 	String^ password;
@@ -40,3 +40,5 @@ bool IsNumeric(String^ str);
 bool IsOnlyNumeric(String^ str);
 
 void updateDataGridView(String^ queryCommand, DataGridView^ dgv);
+
+bool check_existence(String^ sqlQuery);

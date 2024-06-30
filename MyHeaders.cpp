@@ -19,15 +19,16 @@ void User::InitializeVariables(String^ username) {
 		if (reader->Read()) {
 			/*user = gcnew User;*/
 			this->username = username;
-			this->password = reader->GetString(1);
-			this->displayName = reader->GetString(2);
-			this->userType = reader->GetString(3);
+			this->id = reader->GetInt32(0);
+			this->password = reader->GetString(2);
+			this->displayName = reader->GetString(3);
+			this->userType = reader->GetString(4);
 
 			// Check if column 4 is not null
-			if (!reader->IsDBNull(4))
+			if (!reader->IsDBNull(5))
 			{
 				// Retrieve the image data from the column
-				array<unsigned char>^ imageData = safe_cast<array<unsigned char>^>(reader->GetValue(4));
+				array<unsigned char>^ imageData = safe_cast<array<unsigned char>^>(reader->GetValue(5));
 
 				// Convert the image data to a System::Drawing::Image^ object
 				using namespace System::IO;
@@ -152,6 +153,22 @@ extern inline int getIDfromCombobox(ComboBox^ cbx, Label^ lblW, String^ table, S
 		return value;
 	}
 	else return -2;
+}
+
+extern inline bool check_existence(String^ sqlQuery) {
+	try {
+		SqlConnection^ connection = StartConnection();
+
+		SqlCommand command(sqlQuery, connection);
+
+		SqlDataReader^ reader = command.ExecuteReader();
+		if (reader->Read()) return true;
+		else return false;
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("An error occured: " + ex->Message);
+		return false;
+	}
 }
 
 extern inline bool IsNumeric(String^ str)
