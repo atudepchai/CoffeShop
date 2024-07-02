@@ -3,31 +3,32 @@
 
 // ============================== USER ==============
 // This function initializes the attributes in the User class when a user logs in.
-void User::InitializeVariables(String^ username) {
+void User::InitializeVariables(int id) {
 	try {
 		SqlConnection^ connection = GetConnection();
 		if (connection->State == ConnectionState::Closed) {
 			connection->Open();
 		}
 		// Send the query
-		String^ sqlQuery = "SELECT * FROM Account WHERE username=@usr;";
+		String^ sqlQuery = "SELECT * FROM Account WHERE id=@ID;";
 		SqlCommand command(sqlQuery, connection);
-		command.Parameters->AddWithValue("@usr", username);
+		command.Parameters->AddWithValue("@ID", id);
 
 		// Read contents of database
 		SqlDataReader^ reader = command.ExecuteReader();
 		if (reader->Read()) {
 			/*user = gcnew User;*/
-			this->username = username;
-			this->password = reader->GetString(1);
-			this->displayName = reader->GetString(2);
-			this->userType = reader->GetString(3);
+			this->username = reader->GetString(1);
+			this->id = id;
+			this->password = reader->GetString(2);
+			this->displayName = reader->GetString(3);
+			this->userType = reader->GetString(4);
 
 			// Check if column 4 is not null
-			if (!reader->IsDBNull(4))
+			if (!reader->IsDBNull(5))
 			{
 				// Retrieve the image data from the column
-				array<unsigned char>^ imageData = safe_cast<array<unsigned char>^>(reader->GetValue(4));
+				array<unsigned char>^ imageData = safe_cast<array<unsigned char>^>(reader->GetValue(5));
 
 				// Convert the image data to a System::Drawing::Image^ object
 				using namespace System::IO;
@@ -152,6 +153,22 @@ extern inline int getIDfromCombobox(ComboBox^ cbx, Label^ lblW, String^ table, S
 		return value;
 	}
 	else return -2;
+}
+
+extern inline bool check_existence(String^ sqlQuery) {
+	try {
+		SqlConnection^ connection = StartConnection();
+
+		SqlCommand command(sqlQuery, connection);
+
+		SqlDataReader^ reader = command.ExecuteReader();
+		if (reader->Read()) return true;
+		else return false;
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("An error occured: " + ex->Message);
+		return false;
+	}
 }
 
 extern inline bool IsNumeric(String^ str)

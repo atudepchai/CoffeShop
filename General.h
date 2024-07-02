@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "database.h"
 #include "MyHeaders.h"
+#include "ManagementForm.h"
 
 namespace CoffeShop {
 
@@ -514,6 +515,7 @@ namespace CoffeShop {
 			// 
 			this->rtbSelectedItemInfo->Cursor = System::Windows::Forms::Cursors::No;
 			this->rtbSelectedItemInfo->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->rtbSelectedItemInfo->Enabled = false;
 			this->rtbSelectedItemInfo->Location = System::Drawing::Point(155, 0);
 			this->rtbSelectedItemInfo->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->rtbSelectedItemInfo->Name = L"rtbSelectedItemInfo";
@@ -689,10 +691,20 @@ namespace CoffeShop {
 		}
 
 		private: System::Void cbItem_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-			if (cbItem->SelectedIndex < 0) {
-				
-			}
+			int currentId = cbItem->SelectedIndex + 1;
+			String^ idString = currentId.ToString();
+
+			dgvListOfItems1->Rows[currentId - 1]->Cells[0]->Selected = true;
+
+			DataGridViewCellCollection^ rows = dgvListOfItems1->Rows[currentId - 1]->Cells;
+
+			picboxSelectedItem->Image = nullptr;
+			rtbSelectedItemInfo->Text = " Item ID\t: " + rows[0]->Value->ToString() +
+				"\n Name\t: " + rows[1]->Value->ToString() +
+				"\n Category\t: " + rows[2]->Value->ToString() +
+				"\n Price\t: " + rows[3]->Value->ToString();
 		}
+
 		private: System::Void dgvListOfItems1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 
 			//int idValue = Convert::ToInt32(dgvListOfItems1->CurrentRow->Cells[0]->Value);
@@ -701,6 +713,11 @@ namespace CoffeShop {
 		}
 		
 		private: System::Void picboxProfilePicture_Click(System::Object^ sender, System::EventArgs^ e) {
+			ManagementForm^ managepage = gcnew ManagementForm();
+			this->Hide();
+			managepage->ShowDialog();
+			this->Show();
+			return;
 			// Change profile picture
 			OpenFileDialog^ ofd = gcnew OpenFileDialog();
 			ofd->Title = L"Coffee Shop: Select an Image";
@@ -723,21 +740,26 @@ namespace CoffeShop {
 			cbCategory->SelectedIndex = 0;
 			cbItem->SelectedIndex = idValue - 1;
 
+			DataGridViewCellCollection^ rows = dgvListOfItems1->Rows[idValue - 1]->Cells;
+
 			picboxSelectedItem->Image = nullptr;
-			rtbSelectedItemInfo->Text = " Item ID\t: " +dgvListOfItems1->CurrentRow->Cells[0]->Value->ToString()+
-				"\n Name\t: " + dgvListOfItems1->CurrentRow->Cells[1]->Value->ToString() +
-				"\n Category\t: " + dgvListOfItems1->CurrentRow->Cells[2]->Value->ToString() +
-				"\n Price\t: " + dgvListOfItems1->CurrentRow->Cells[3]->Value->ToString();
+			rtbSelectedItemInfo->Text = " Item ID\t: " + rows[0]->Value->ToString() +
+				"\n Name\t: " + rows[1]->Value->ToString() +
+				"\n Category\t: " + rows[2]->Value->ToString() +
+				"\n Price\t: " + rows[3]->Value->ToString();
 		}
-	private: System::Void numQuantity_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void rtbSelectedItemInfo_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-//nah, i think when press button "add to cart", will show bill in here
-}
-private: System::Void picboxSelectedItem_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void rtbSelectedItemInfo_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-		e->SuppressKeyPress = true;// Prevent any key from making a "beep" sound
-}
-};
+		private: System::Void numQuantity_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+		}
+
+		private: System::Void rtbSelectedItemInfo_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		//nah, i think when press button "add to cart", will show bill in here
+		}
+
+		private: System::Void picboxSelectedItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		}
+
+		private: System::Void rtbSelectedItemInfo_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+				e->SuppressKeyPress = true;// Prevent any key from making a "beep" sound
+		}
+	};
 }

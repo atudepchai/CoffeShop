@@ -118,7 +118,7 @@
   <ItemGroup>
     <ClCompile Include="database.cpp" />
     <ClCompile Include="Form1.cpp" />
-    <ClCompile Include="Form3.cpp" />
+    <ClCompile Include="ManagementForm.cpp" />
     <ClCompile Include="General.cpp" />
     <ClCompile Include="MyHeaders.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -142,7 +142,7 @@
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Form3.h">
+    <ClInclude Include="ManagementForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="General.h">
@@ -155,8 +155,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.h</DependentUpon>
+    <EmbeddedResource Include="ManagementForm.resx">
+      <DependentUpon>ManagementForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="General.resx">
       <DependentUpon>General.h</DependentUpon>

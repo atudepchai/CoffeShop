@@ -9,10 +9,10 @@ using namespace System::Drawing;
 public ref class User {
 public:
 	// Initializes the object with database values
-	void InitializeVariables(String^ username);
+	void InitializeVariables(int id);
 	bool User::operator==(User^ other);
 	User();
-
+	int id;
 	String^ username;
 	String^ displayName;
 	String^ password;
@@ -40,3 +40,5 @@ bool IsNumeric(String^ str);
 bool IsOnlyNumeric(String^ str);
 
 void updateDataGridView(String^ queryCommand, DataGridView^ dgv);
+
+bool check_existence(String^ sqlQuery);
