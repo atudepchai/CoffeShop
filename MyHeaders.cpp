@@ -3,23 +3,23 @@
 
 // ============================== USER ==============
 // This function initializes the attributes in the User class when a user logs in.
-void User::InitializeVariables(String^ username) {
+void User::InitializeVariables(int id) {
 	try {
 		SqlConnection^ connection = GetConnection();
 		if (connection->State == ConnectionState::Closed) {
 			connection->Open();
 		}
 		// Send the query
-		String^ sqlQuery = "SELECT * FROM Account WHERE username=@usr;";
+		String^ sqlQuery = "SELECT * FROM Account WHERE id=@ID;";
 		SqlCommand command(sqlQuery, connection);
-		command.Parameters->AddWithValue("@usr", username);
+		command.Parameters->AddWithValue("@ID", id);
 
 		// Read contents of database
 		SqlDataReader^ reader = command.ExecuteReader();
 		if (reader->Read()) {
 			/*user = gcnew User;*/
-			this->username = username;
-			this->id = reader->GetInt32(0);
+			this->username = reader->GetString(1);
+			this->id = id;
 			this->password = reader->GetString(2);
 			this->displayName = reader->GetString(3);
 			this->userType = reader->GetString(4);

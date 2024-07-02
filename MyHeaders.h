@@ -9,7 +9,7 @@ using namespace System::Drawing;
 public ref class User {
 public:
 	// Initializes the object with database values
-	void InitializeVariables(String^ username);
+	void InitializeVariables(int id);
 	bool User::operator==(User^ other);
 	User();
 	int id;
