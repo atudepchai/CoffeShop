@@ -677,7 +677,7 @@ namespace CoffeShop {
 		}
 		
 		private: System::Void picboxProfilePicture_Click(System::Object^ sender, System::EventArgs^ e) {
-			ManagementForm^ managepage = gcnew ManagementForm(usr);
+			ManagementForm^ managepage = gcnew ManagementForm();
 			this->Hide();
 			managepage->ShowDialog();
 			this->Show();
@@ -712,15 +712,18 @@ namespace CoffeShop {
 				"\n Category\t: " + rows[2]->Value->ToString() +
 				"\n Price\t: " + rows[3]->Value->ToString();
 		}
-	private: System::Void numQuantity_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void rtbSelectedItemInfo_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-//nah, i think when press button "add to cart", will show bill in here
-}
-private: System::Void picboxSelectedItem_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void rtbSelectedItemInfo_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-		e->SuppressKeyPress = true;// Prevent any key from making a "beep" sound
-}
-};
+		private: System::Void numQuantity_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+		}
+
+		private: System::Void rtbSelectedItemInfo_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		//nah, i think when press button "add to cart", will show bill in here
+		}
+
+		private: System::Void picboxSelectedItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		}
+
+		private: System::Void rtbSelectedItemInfo_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+				e->SuppressKeyPress = true;// Prevent any key from making a "beep" sound
+		}
+	};
 }
